@@ -25,6 +25,7 @@ form.addEventListener('submit',function(event){
 
     let newItem = document.createElement('li')
     newItem.id = detail.id
+    newItem.className='list-group-item'
 
     let contents = document.createElement('span')
     contents.textContent=detail.amount+" - "+detail.description+" - "+detail.category
@@ -32,12 +33,12 @@ form.addEventListener('submit',function(event){
     
     let editbtn = document.createElement('button')
     editbtn.appendChild(document.createTextNode("Edit"))
-    editbtn.className='edit-btn'
+    editbtn.className='edit-btn btn-success'
 
     newItem.appendChild(editbtn)
     let deletebtn = document.createElement('button')
     deletebtn.appendChild(document.createTextNode("Delete"))
-    deletebtn.className='delete-btn'
+    deletebtn.className='delete-btn btn-danger'
     newItem.appendChild(deletebtn)
 
     list.appendChild(newItem)
@@ -53,6 +54,8 @@ if(items){
         
         
         let newItem = document.createElement('li')
+        newItem.className='list-group-item'
+
         newItem.id = item.id
 
         let contents = document.createElement('span')
@@ -62,12 +65,12 @@ if(items){
         
         let editbtn = document.createElement('button')
         editbtn.appendChild(document.createTextNode("Edit"))
-        editbtn.className='edit-btn'    
+        editbtn.className='edit-btn btn-success'    
         newItem.appendChild(editbtn)
         
         let deletebtn = document.createElement('button')
         deletebtn.appendChild(document.createTextNode("Delete"))
-        deletebtn.className='delete-btn'
+        deletebtn.className='delete-btn btn-danger'
         newItem.appendChild(deletebtn)
         
         list.appendChild(newItem)
@@ -93,7 +96,7 @@ lists.addEventListener('click',function(event){
         spanEle.contentEditable = true
         event.target.textContent = "Save"
         event.target.className=''
-        event.target.className='save-btn'
+        event.target.className='save-btn btn-primary'
         
     }else  if(event.target.classList.contains('save-btn')){
         let itemToup = event.target.parentElement
@@ -104,7 +107,7 @@ lists.addEventListener('click',function(event){
         
         event.target.textContent = "Edit"
         event.target.className=''
-        event.target.className='edit-btn'
+        event.target.className='edit-btn btn-success'
        
         console.log("new text ",newDet.trim().split('-'))
         newDet = newDet.trim().split('-')
