@@ -49,16 +49,22 @@ function handleFormSubmit(event) {
         userList.removeChild(event.target.parentElement);
         localStorage.removeItem(userDetails.email);
       }).catch((e)=>console.log("error while deleting ",e))
-
-
+      
+      
     });
-  
+    
     editBtn.addEventListener("click", function (event) {
-      userList.removeChild(event.target.parentElement);
-      localStorage.removeItem(userDetails.email);
-      document.getElementById("username").value = userDetails.username;
-      document.getElementById("email").value = userDetails.email;
-      document.getElementById("phone").value = userDetails.phone;
+      axios.delete('https://crudcrud.com/api/3166038a3ec14b29a34984863f1422f2/appointmentData/'+event.target.parentElement.id)
+      .then((d)=>{
+        console.log("deleted ",d)
+       
+        userList.removeChild(event.target.parentElement);
+        localStorage.removeItem(userDetails.email);
+        document.getElementById("username").value = userDetails.username;
+        document.getElementById("email").value = userDetails.email;
+        document.getElementById("phone").value = userDetails.phone;
+        
+      }).catch((e)=>console.log("error while deleting ",e))
     });
   }
   
