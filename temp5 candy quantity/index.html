@@ -7,51 +7,81 @@
 </head>
 <style>
     form{
-        margin-top: 30px;
+        /* margin-top: 30px; */
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        background-color: rgb(165, 163, 163);
+        padding: 50px;
     }
     
     input{
         margin-right: 15px;
     }
     span{
-        margin: 10px;
+        /* margin: 10px; */
+        margin-left:50px ;
+        margin-right:50px ;
     }
     button{
         margin: 10px;
     }
 
     .listss{
+        margin-top: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         /* background-color: red; */
         
+    }
+    h2{
+        text-transform: uppercase;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    button{
+        cursor: pointer;
+    }
+
+    .no-item{
+        display: inline-block;
+        font-size: 25px;
+        color: gray;
+    }
+    ul{
+        background-color: rgb(171, 190, 199);
+        text-align: center;
+        border-radius: 5px;
     }
 </style>
 <body>
 <form onsubmit="handleSubmit(event)">
-    <label for="name">Candy Name:</label>
-    <input id="name" name="name" type="text"/>
+    <h2>Item Form</h2>
+    <div>
 
-    <label for="description">Description:</label>
-    <input id="description" name="description" type="text"/>
-
-    <label for="price">Price:</label>
-    <input id="price" name="price" type="number"/>
-
-    <label for="quantity">Quantity:</label>
-    <input id="quantity" name="quantity" type="number"/>
-
-    <button type="submit">ADD ITEM</button>
+        <label for="name">Candy Name:</label>
+        <input id="name" name="name" type="text" required/>
+        
+        <label for="description">Description:</label>
+        <input id="description" name="description" type="text" required/>
+        
+        <label for="price">Price:</label>
+        <input id="price" name="price" type="number" required/>
+        
+        <label for="quantity">Quantity:</label>
+        <input id="quantity" name="quantity" type="number" required/>
+        
+        <button type="submit">ADD ITEM</button>
+    </div>
 </form>
 
 <div class="listss">
-
+    <h2>Items List</h2>
+    <!-- <span class="items-num">No item</span> -->
     <ul>
-        
     </ul>
 </div>
 <script src="index.js"></script>

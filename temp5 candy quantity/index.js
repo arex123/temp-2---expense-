@@ -112,5 +112,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         details.forEach(element => {
             showOnScreen(element)
         });
+
+        
     })
 })
